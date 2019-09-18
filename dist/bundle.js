@@ -141,25 +141,27 @@ function Calculate() {
     var number2string = calcInput2.value;
     var number1 = Number(number1string);
     var number2 = Number(number2string);
-    if (optionPlus.selected) {
-        var sum1 = Number(number1 + number2);
-        calcOutput.innerHTML = sum1.toString();
-        console.log(calcOutput.innerHTML);
-    }
-    else if (optionMinus.selected) {
-        var sum2 = Number(number1 - number2);
-        calcOutput.innerHTML = sum2.toString();
-        console.log(calcOutput.innerHTML);
-    }
-    else if (optionGange.selected) {
-        var sum3 = Number(number1 * number2);
-        calcOutput.innerHTML = sum3.toString();
-        console.log(calcOutput.innerHTML);
-    }
-    else if (optionDivider.selected) {
-        var sum4 = Number(number1 / number2);
-        calcOutput.innerHTML = sum4.toString();
-        console.log(calcOutput.innerHTML);
+    if (number1 != null && number2 != null) {
+        if (optionPlus.selected) {
+            var sum1 = Number(number1 + number2);
+            calcOutput.innerHTML = sum1.toString();
+            console.log(calcOutput.innerHTML);
+        }
+        else if (optionMinus.selected) {
+            var sum2 = Number(number1 - number2);
+            calcOutput.innerHTML = sum2.toString();
+            console.log(calcOutput.innerHTML);
+        }
+        else if (optionGange.selected) {
+            var sum3 = Number(number1 * number2);
+            calcOutput.innerHTML = sum3.toString();
+            console.log(calcOutput.innerHTML);
+        }
+        else if (optionDivider.selected) {
+            var sum4 = Number(number1 / number2);
+            calcOutput.innerHTML = sum4.toString();
+            console.log(calcOutput.innerHTML);
+        }
     }
 }
 function sayHello() {
