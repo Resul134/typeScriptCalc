@@ -122,6 +122,10 @@ doItButton.addEventListener("click", convertString);
 var output = document.getElementById("outputManipulation");
 var optionToLower = document.getElementById("Lower");
 var optionToUpper = document.getElementById("Upper");
+//liste element
+var inputListElement = document.getElementById("listInput");
+var addElement_ToList = document.getElementById("addElementButton");
+var listOutputElement = document.getElementById("ElementOutput");
 function sayHello() {
     var inputElement = document.getElementById("inputField");
     var name = inputElement.value;
@@ -156,6 +160,18 @@ function convertString() {
         }
         console.log("To upper Selected: " + optionToUpper.selected);
     }
+}
+function addListELement() {
+    var word = inputListElement.innerHTML;
+    var listElement = document.createElement("li");
+    word = listElement.innerHTML;
+    listElement.appendChild(listElement);
+    console.log("list element apended");
+    listElement.addEventListener("copy", function (keyevent) {
+        if (keyevent.keyCode === 13) {
+            addListELement();
+        }
+    });
 }
 
 

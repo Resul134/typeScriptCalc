@@ -33,6 +33,14 @@ let output : HTMLElement = <HTMLElement>document.getElementById("outputManipulat
 let optionToLower : HTMLOptionElement = <HTMLOptionElement>document.getElementById("Lower")
 let optionToUpper : HTMLOptionElement = <HTMLOptionElement>document.getElementById("Upper")
 
+
+//liste element
+
+let inputListElement : HTMLElement = <HTMLElement>document.getElementById("listInput");
+let addElement_ToList: HTMLButtonElement = <HTMLButtonElement>document.getElementById("addElementButton")
+let listOutputElement : HTMLElement = <HTMLElement>document.getElementById("ElementOutput")
+
+
 function sayHello(): void{
     let inputElement : HTMLInputElement = <HTMLInputElement>document.getElementById("inputField");
     let name : string = inputElement.value;
@@ -86,6 +94,21 @@ function convertString(): void{
     
     }
     
+}
+
+function addListELement(): void{
+    let word: string = inputListElement.innerHTML;
+
+    let listElement : HTMLElement = document.createElement("li");
+    word = listElement.innerHTML;
+    listElement.appendChild(listElement)
+    console.log("list element apended")
+    listElement.addEventListener("copy", (keyevent: KeyboardEvent)=> {
+        if(keyevent.keyCode === 13)
+        {
+            addListELement();
+        }
+    })
 }
 
 
