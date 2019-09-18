@@ -163,6 +163,7 @@ function Calculate() {
             console.log(calcOutput.innerHTML);
         }
     }
+    calcOutput.innerHTML = "You can't leave them blank";
 }
 function sayHello() {
     var inputElement = document.getElementById("inputField");

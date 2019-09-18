@@ -91,6 +91,7 @@ function Calculate(): void{
         console.log(calcOutput.innerHTML)
         }
     }
+    calcOutput.innerHTML = "You can't leave them blank";
     
 
 
