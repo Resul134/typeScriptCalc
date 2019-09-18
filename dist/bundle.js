@@ -107,6 +107,7 @@ module.exports = __webpack_require__.p + "index.htm";
 //#region Save, clear, show.
 var words = [];
 var word;
+var listWord;
 var inputElement = document.getElementById("wordInput");
 var saveButton = document.getElementById("saveButton");
 saveButton.addEventListener("click", saveWords);
@@ -124,8 +125,43 @@ var optionToLower = document.getElementById("Lower");
 var optionToUpper = document.getElementById("Upper");
 //liste element
 var inputListElement = document.getElementById("listInput");
-var addElement_ToList = document.getElementById("addElementButton");
-var listOutputElement = document.getElementById("ElementOutput");
+//Calculator
+var calcInput1 = document.getElementById("calcInput1");
+var calcInput2 = document.getElementById("calcInput2");
+var calcOutput = document.getElementById("calcOutput");
+var allOptions = document.getElementById("SelectedNumber");
+var optionPlus = document.getElementById("Plus");
+var optionMinus = document.getElementById("Minus");
+var optionGange = document.getElementById("Gange");
+var optionDivider = document.getElementById("Divider");
+var buttonCalc = document.getElementById("buttonCalculate");
+buttonCalc.addEventListener("click", Calculate);
+function Calculate() {
+    var number1string = calcInput1.value;
+    var number2string = calcInput2.value;
+    var number1 = Number(number1string);
+    var number2 = Number(number2string);
+    if (optionPlus.selected) {
+        var sum1 = Number(number1 + number2);
+        calcOutput.innerHTML = sum1.toString();
+        console.log(calcOutput.innerHTML);
+    }
+    else if (optionMinus.selected) {
+        var sum2 = Number(number1 - number2);
+        calcOutput.innerHTML = sum2.toString();
+        console.log(calcOutput.innerHTML);
+    }
+    else if (optionGange.selected) {
+        var sum3 = Number(number1 * number2);
+        calcOutput.innerHTML = sum3.toString();
+        console.log(calcOutput.innerHTML);
+    }
+    else if (optionDivider.selected) {
+        var sum4 = Number(number1 / number2);
+        calcOutput.innerHTML = sum4.toString();
+        console.log(calcOutput.innerHTML);
+    }
+}
 function sayHello() {
     var inputElement = document.getElementById("inputField");
     var name = inputElement.value;
@@ -162,7 +198,7 @@ function convertString() {
     }
 }
 function addListELement() {
-    var word = inputListElement.innerHTML;
+    listWord = inputListElement.value;
     var listElement = document.createElement("li");
     word = listElement.innerHTML;
     listElement.appendChild(listElement);
