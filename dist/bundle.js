@@ -107,7 +107,7 @@ module.exports = __webpack_require__.p + "index.htm";
 //#region Save, clear, show.
 var words = [];
 var word;
-var listWord;
+var listWord = [];
 var inputElement = document.getElementById("wordInput");
 var saveButton = document.getElementById("saveButton");
 saveButton.addEventListener("click", saveWords);
@@ -125,6 +125,9 @@ var optionToLower = document.getElementById("Lower");
 var optionToUpper = document.getElementById("Upper");
 //liste element
 var inputListElement = document.getElementById("listInput");
+var addtoListelement = document.getElementById("addElementButton");
+addtoListelement.addEventListener("click", addListELement);
+var outputList = document.getElementById("ElementOutput");
 //Calculator
 var calcInput1 = document.getElementById("calcInput1");
 var calcInput2 = document.getElementById("calcInput2");
@@ -163,7 +166,6 @@ function Calculate() {
             console.log(calcOutput.innerHTML);
         }
     }
-    calcOutput.innerHTML = "You can't leave them blank";
 }
 function sayHello() {
     var inputElement = document.getElementById("inputField");
@@ -201,16 +203,9 @@ function convertString() {
     }
 }
 function addListELement() {
-    listWord = inputListElement.value;
-    var listElement = document.createElement("li");
-    word = listElement.innerHTML;
-    listElement.appendChild(listElement);
-    console.log("list element apended");
-    listElement.addEventListener("copy", function (keyevent) {
-        if (keyevent.keyCode === 13) {
-            addListELement();
-        }
-    });
+    var words = inputListElement.value;
+    listWord.join(words);
+    console.log(listWord.push(words));
 }
 
 

@@ -8,7 +8,7 @@ let words: string[] = [];
 
 let word : string;
 
-let listWord : string;
+let listWord : string[] = [];
 
 let inputElement: HTMLInputElement = <HTMLInputElement>document.getElementById("wordInput");
 
@@ -37,7 +37,11 @@ let optionToUpper : HTMLOptionElement = <HTMLOptionElement>document.getElementBy
 
 
 //liste element
-let inputListElement : HTMLElement = <HTMLElement>document.getElementById("listInput")
+let inputListElement : HTMLInputElement = <HTMLInputElement>document.getElementById("listInput")
+let addtoListelement : HTMLButtonElement = <HTMLButtonElement>document.getElementById("addElementButton")
+addtoListelement.addEventListener("click", addListELement)
+let outputList : HTMLElement = <HTMLElement>document.getElementById("ElementOutput")
+
 
 
 //Calculator
@@ -90,8 +94,9 @@ function Calculate(): void{
         calcOutput.innerHTML = sum4.toString();
         console.log(calcOutput.innerHTML)
         }
+        
     }
-    calcOutput.innerHTML = "You can't leave them blank";
+    
     
 
 
@@ -159,18 +164,11 @@ function convertString(): void{
 }
 
 function addListELement(): void{
-    listWord = inputListElement.value;
+    
+    let words : string = inputListElement.value;
+    listWord.join(words);
+    console.log(listWord.push(words));
 
-    let listElement : HTMLElement = document.createElement("li");
-    word = listElement.innerHTML;
-    listElement.appendChild(listElement)
-    console.log("list element apended")
-    listElement.addEventListener("copy", (keyevent: KeyboardEvent)=> {
-        if(keyevent.keyCode === 13)
-        {
-            addListELement();
-        }
-    })
 }
 
 
